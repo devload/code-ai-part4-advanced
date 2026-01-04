@@ -10,5 +10,5 @@ application {
 }
 
 dependencies {
-    implementation project(':step19-rag')
+    implementation project(':step21-rag')
 }

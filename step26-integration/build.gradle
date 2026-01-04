@@ -10,8 +10,8 @@ application {
 }
 
 dependencies {
-    implementation project(':step19-rag')
-    implementation project(':step20-vectordb')
-    implementation project(':step21-agent')
-    implementation project(':step23-multimodal')
+    implementation project(':step21-rag')
+    implementation project(':step22-vectordb')
+    implementation project(':step23-agent')
+    implementation project(':step25-multimodal')
 }
