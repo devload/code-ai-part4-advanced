@@ -14,53 +14,53 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 25: RAG (Retrieval-Augmented Generation)           │
+│ STEP 19: RAG (Retrieval-Augmented Generation)           │
 │ 문서 청킹 → 임베딩 → 벡터 검색 → 컨텍스트 주입           │
 └─────────────────────────────────────────────────────────┘
         │
         ▼
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 26: Agent (ReAct Pattern)                          │
+│ STEP 20: Vector DB                                      │
+│ 벡터 저장 → 인덱싱 → 유사도 검색 → 결과 반환             │
+└─────────────────────────────────────────────────────────┘
+        │
+        ▼
+┌─────────────────────────────────────────────────────────┐
+│ STEP 21: Agent (ReAct Pattern)                          │
 │ Thought → Action → Observation → 반복 → 종료            │
 └─────────────────────────────────────────────────────────┘
         │
         ▼
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 27: Fine-tuning (LoRA)                             │
+│ STEP 22: Fine-tuning (LoRA)                             │
 │ 베이스 모델 → 어댑터 학습 → 도메인 특화                  │
 └─────────────────────────────────────────────────────────┘
         │
         ▼
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 28: Multimodal                                      │
+│ STEP 23: Multimodal                                      │
 │ 이미지 → 인코딩 → 텍스트 융합 → 통합 분석                │
 └─────────────────────────────────────────────────────────┘
         │
         ▼
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 29: Evaluation                                      │
-│ 자동 평가 → 벤치마크 → 품질 측정                         │
-└─────────────────────────────────────────────────────────┘
-        │
-        ▼
-┌─────────────────────────────────────────────────────────┐
-│ STEP 30: Integration                                     │
+│ STEP 24: Integration                                     │
 │ RAG + Agent + Multimodal 통합 데모                       │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 학습 단계 (STEP 25-30)
+## 학습 단계 (STEP 19-24)
 
 | STEP | 제목 | 핵심 질문 | 실행 명령 |
 |------|------|----------|----------|
-| 25 | RAG | 외부 지식을 어떻게 활용하는가? | `./gradlew :step25-rag:run` |
-| 26 | Agent | AI가 어떻게 자율적으로 행동하는가? | `./gradlew :step26-agent:run` |
-| 27 | Fine-tuning | 모델을 어떻게 특화하는가? | `./gradlew :step27-finetuning:run` |
-| 28 | Multimodal | 이미지를 어떻게 이해하는가? | `./gradlew :step28-multimodal:run` |
-| 29 | Evaluation | AI 품질을 어떻게 측정하는가? | `./gradlew :step29-evaluation:run` |
-| 30 | Integration | 모든 기술을 어떻게 통합하는가? | `./gradlew :step30-integration:run` |
+| 19 | RAG | 외부 지식을 어떻게 활용하는가? | `./gradlew :step19-rag:run` |
+| 20 | Vector DB | 벡터를 어떻게 저장/검색하는가? | `./gradlew :step20-vectordb:run` |
+| 21 | Agent | AI가 어떻게 자율적으로 행동하는가? | `./gradlew :step21-agent:run` |
+| 22 | Fine-tuning | 모델을 어떻게 특화하는가? | `./gradlew :step22-finetuning:run` |
+| 23 | Multimodal | 이미지를 어떻게 이해하는가? | `./gradlew :step23-multimodal:run` |
+| 24 | Integration | 모든 기술을 어떻게 통합하는가? | `./gradlew :step24-integration:run` |
 
 ---
 
@@ -73,14 +73,14 @@
 
 ### 데모 실행
 ```bash
-# STEP 25: RAG 데모 (핵심)
-./gradlew :step25-rag:run
+# STEP 19: RAG 데모 (핵심)
+./gradlew :step19-rag:run
 
-# STEP 26: Agent 데모 (ReAct 패턴)
-./gradlew :step26-agent:run
+# STEP 21: Agent 데모 (ReAct 패턴)
+./gradlew :step21-agent:run
 
-# STEP 30: 통합 데모
-./gradlew :step30-integration:run
+# STEP 24: 통합 데모
+./gradlew :step24-integration:run
 ```
 
 ### 출력 예시 (RAG)
@@ -139,12 +139,12 @@
 
 ```
 code-ai-part4-advanced/
-├── step25-rag/                # RAG
-├── step26-agent/              # Agent (ReAct)
-├── step27-finetuning/         # Fine-tuning (LoRA)
-├── step28-multimodal/         # Multimodal
-├── step29-evaluation/         # Evaluation
-├── step30-integration/        # Integration
+├── step19-rag/                # RAG 개념
+├── step20-vectordb/           # Vector DB
+├── step21-agent/              # Agent (ReAct)
+├── step22-finetuning/         # Fine-tuning (LoRA)
+├── step23-multimodal/         # Multimodal
+├── step24-integration/        # Integration
 └── docs/                      # 학습 문서
 ```
 
@@ -200,42 +200,30 @@ code-ai-part4-advanced/
 
 ---
 
-## 평가 메트릭 (STEP 29)
-
-| 메트릭 | 설명 |
-|--------|------|
-| Accuracy | 정확도 |
-| Latency | 응답 속도 |
-| Relevance | 관련성 점수 |
-| Faithfulness | 사실 충실도 |
-| Toxicity | 유해성 점수 |
-
----
-
 ## 시리즈 전체 구성
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│ Part 1: AI 기초 프로세스                                 │
+│ Part 1: AI 기초 프로세스 (STEP 1-8)                      │
 │ 토큰화 → 컨텍스트 → 확률 → 샘플링 → Embedding → Transformer │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│ Part 2: 코드 분석 프로세스                               │
+│ Part 2: 코드 분석 프로세스 (STEP 7-12)                   │
 │ 파싱 → AST → 시맨틱 → 패턴매칭 → 이슈탐지 → 스코어링      │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│ Part 3: AI 서비스 프로세스                               │
+│ Part 3: AI 서비스 프로세스 (STEP 13-18)                  │
 │ API → 프롬프트 → LLM → 응답파싱 → 액션 → 피드백           │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│ Part 4: 고급 주제 (현재) ◀───────────────────────────────  │
-│ RAG → Agent → Fine-tuning → Multimodal → 통합           │
+│ Part 4: 고급 주제 (STEP 19-24) ◀─────────────────────────  │
+│ RAG → VectorDB → Agent → Fine-tuning → Multimodal → 통합 │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -255,4 +243,4 @@ MIT License
 
 ---
 
-**Version**: 1.0.0 | **STEP**: 25-30 | **Focus**: Advanced AI Topics
+**Version**: 1.1.0 | **STEP**: 19-24 | **Focus**: Advanced AI Topics

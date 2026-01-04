@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+description = 'STEP 20: Vector DB - 벡터 저장 및 검색'
+
+application {
+    mainClass = 'com.aiprocess.step26.RAGImplementationDemo'  // TODO: 패키지명 리팩토링 필요
+}
+
+dependencies {
+    implementation project(':step19-rag')
+}

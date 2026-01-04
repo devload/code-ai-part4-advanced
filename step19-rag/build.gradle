@@ -1,0 +1,10 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+description = 'STEP 19: RAG 개념 - 검색 증강 생성'
+
+application {
+    mainClass = 'com.aiprocess.step25.RAGConceptDemo'  // TODO: 패키지명 리팩토링 필요
+}

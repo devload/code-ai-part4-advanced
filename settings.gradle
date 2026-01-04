@@ -1,9 +1,9 @@
 rootProject.name = 'ai-process-part4'
 
-// Part 4: 고급 주제 모듈
-include 'step25-rag-concept'
-include 'step26-rag-implementation'
-include 'step27-agent'
-include 'step28-finetuning'
-include 'step29-multimodal'
-include 'step30-integration'
+// Part 4: 고급 주제 모듈 (STEP 19-24)
+include 'step19-rag'
+include 'step20-vectordb'
+include 'step21-agent'
+include 'step22-finetuning'
+include 'step23-multimodal'
+include 'step24-integration'

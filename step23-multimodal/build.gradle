@@ -1,0 +1,10 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+description = 'STEP 23: Multimodal - 다중 모달리티 AI'
+
+application {
+    mainClass = 'com.aiprocess.step29.MultimodalDemo'  // TODO: 패키지명 리팩토링 필요
+}

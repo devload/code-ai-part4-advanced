@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+description = 'STEP 24: 종합 프로젝트 - RAG + Agent + Multimodal'
+
+application {
+    mainClass = 'com.aiprocess.step30.IntegrationDemo'  // TODO: 패키지명 리팩토링 필요
+}
+
+dependencies {
+    implementation project(':step19-rag')
+    implementation project(':step20-vectordb')
+    implementation project(':step21-agent')
+    implementation project(':step23-multimodal')
+}
